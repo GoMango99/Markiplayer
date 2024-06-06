@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvrbutpfsbdfh"]
+
+[ext_resource type="Script" path="res://Multiplayer_Test.gd" id="1_6fvu4"]
+[ext_resource type="PackedScene" uid="uid://dkeqpuriww4o3" path="res://basic_player.tscn" id="2_5muxu"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_tats3"]
+
+[node name="Multiplayer_Test" type="Node2D"]
+script = ExtResource("1_6fvu4")
+player_scene = ExtResource("2_5muxu")
+
+[node name="Host" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 2
+button_group = SubResource("ButtonGroup_tats3")
+text = "Host"
+
+[node name="Join" type="Button" parent="."]
+offset_top = 34.0
+offset_right = 44.0
+offset_bottom = 65.0
+button_mask = 2
+text = "Join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://basic_player.tscn")
+spawn_path = NodePath("..")
+
+[node name="Text" type="LineEdit" parent="."]
+offset_top = 69.0
+offset_right = 205.0
+offset_bottom = 100.0
+placeholder_text = "Enter IP Address"
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]

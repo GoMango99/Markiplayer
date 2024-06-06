@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvrbutpfsbdfh"]
+
+[ext_resource type="Script" path="res://Multiplayer_Test.gd" id="1_6fvu4"]
+[ext_resource type="PackedScene" uid="uid://dkeqpuriww4o3" path="res://basic_player.tscn" id="2_5muxu"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_tats3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mhl51"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ryv8j"]
+sky_material = SubResource("ProceduralSkyMaterial_mhl51")
+
+[sub_resource type="Environment" id="Environment_sgn74"]
+background_mode = 2
+sky = SubResource("Sky_ryv8j")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_pxiln"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_42ymn"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6s04u"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Multiplayer_Test" type="Node2D" node_paths=PackedStringArray("host", "join", "text")]
+script = ExtResource("1_6fvu4")
+player_scene = ExtResource("2_5muxu")
+host = NodePath("Host")
+join = NodePath("Join")
+text = NodePath("Text")
+
+[node name="Host" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 2
+button_group = SubResource("ButtonGroup_tats3")
+text = "Host"
+
+[node name="Join" type="Button" parent="."]
+offset_top = 34.0
+offset_right = 44.0
+offset_bottom = 65.0
+button_mask = 2
+text = "Join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://basic_player.tscn")
+spawn_path = NodePath("..")
+
+[node name="Text" type="LineEdit" parent="."]
+offset_top = 69.0
+offset_right = 205.0
+offset_bottom = 100.0
+placeholder_text = "Enter IP Address"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sgn74")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.893371, -0.44597, 0.0547582, 0, 0.121869, 0.992546, -0.449319, 0.886712, -0.108875, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(44.4195, 0, 0, 0, 1, 0, 0, 0, 26.3271, 0, -1.46476, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_pxiln")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, -6)
+mesh = SubResource("SphereMesh_42ymn")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="RigidBody3D"]
+replication_config = SubResource("SceneReplicationConfig_6s04u")
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]

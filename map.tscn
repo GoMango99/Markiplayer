@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmag2dx2r5dv8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_etbwg"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_hmel8"]
+sky_material = SubResource("ProceduralSkyMaterial_etbwg")
+
+[sub_resource type="Environment" id="Environment_dtm36"]
+background_mode = 2
+sky = SubResource("Sky_hmel8")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_5wqpk"]
+
+[node name="Map" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dtm36")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.893371, -0.44597, 0.0547582, 0, 0.121869, 0.992546, -0.449319, 0.886712, -0.108875, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(44.4195, 0, 0, 0, 1, 0, 0, 0, 26.3271, 0, -1.46476, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_5wqpk")

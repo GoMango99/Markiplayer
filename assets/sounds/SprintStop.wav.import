@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cbp8t0fktbsw7"
-path="res://.godot/imported/Land.wav-fa324085870f372d7c7b98b9c2acb835.sample"
+uid="uid://btq86a28vxxaj"
+path="res://.godot/imported/SprintStop.wav-4d86c687b315121fe63eaf2168d08006.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/Land.wav"
-dest_files=["res://.godot/imported/Land.wav-fa324085870f372d7c7b98b9c2acb835.sample"]
+source_file="res://assets/sounds/SprintStop.wav"
+dest_files=["res://.godot/imported/SprintStop.wav-4d86c687b315121fe63eaf2168d08006.sample"]
 
 [params]
 

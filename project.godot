@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Markiplayer"
-run/main_scene="res://scenes/multiplayer_test.tscn"
+run/main_scene="res://multiplayer_test.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 

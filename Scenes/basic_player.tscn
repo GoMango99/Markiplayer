@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkeqpuriww4o3"]
 
-[ext_resource type="Script" path="res://basic_player.gd" id="1_orddk"]
-[ext_resource type="Script" path="res://Camera3D.gd" id="2_mbaia"]
+[ext_resource type="Script" path="res://Code/basic_player.gd" id="1_orddk"]
+[ext_resource type="Script" path="res://Code/Camera3D.gd" id="2_mbaia"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a4x4m"]
 

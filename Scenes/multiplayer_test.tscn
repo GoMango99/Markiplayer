@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cvrbutpfsbdfh"]
 
-[ext_resource type="Script" path="res://Multiplayer_Test.gd" id="1_6fvu4"]
-[ext_resource type="PackedScene" uid="uid://dkeqpuriww4o3" path="res://basic_player.tscn" id="2_5muxu"]
+[ext_resource type="Script" path="res://Code/Multiplayer_Test.gd" id="1_6fkkf"]
+[ext_resource type="PackedScene" uid="uid://dkeqpuriww4o3" path="res://Scenes/basic_player.tscn" id="2_ampnx"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_tats3"]
 
@@ -27,8 +27,8 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 
 [node name="Multiplayer_Test" type="Node2D" node_paths=PackedStringArray("host", "join", "text")]
-script = ExtResource("1_6fvu4")
-player_scene = ExtResource("2_5muxu")
+script = ExtResource("1_6fkkf")
+player_scene = ExtResource("2_ampnx")
 host = NodePath("Host")
 join = NodePath("Join")
 text = NodePath("Text")
@@ -48,7 +48,6 @@ button_mask = 2
 text = "Join"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://basic_player.tscn")
 spawn_path = NodePath("..")
 
 [node name="Text" type="LineEdit" parent="."]

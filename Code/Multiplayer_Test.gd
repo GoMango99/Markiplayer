@@ -1,7 +1,6 @@
 extends Node2D
 class_name Multiplayer
 
-
 var peer = ENetMultiplayerPeer.new()
 var idCount = 5
 @export var player_scene: PackedScene
@@ -11,7 +10,8 @@ var idCount = 5
 @export var text: LineEdit
 
 func _on_host_pressed():
-	peer.create_server(135)
+  # Creates a server on port (135)
+  peer.create_server(135)
 	host.disabled = true
 	join.disabled = true
 	multiplayer.multiplayer_peer = peer

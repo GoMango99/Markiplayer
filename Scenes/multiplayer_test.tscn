@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvrbutpfsbdfh"]
+[gd_scene load_steps=11 format=3 uid="uid://cvrbutpfsbdfh"]
 
 [ext_resource type="Script" path="res://Code/Multiplayer_Test.gd" id="1_6fkkf"]
 [ext_resource type="PackedScene" uid="uid://dkeqpuriww4o3" path="res://Scenes/basic_player.tscn" id="2_ampnx"]
@@ -25,6 +25,8 @@ tonemap_mode = 2
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_q2iim"]
 
 [node name="Multiplayer_Test" type="Node2D" node_paths=PackedStringArray("host", "join", "text")]
 script = ExtResource("1_6fkkf")
@@ -71,11 +73,15 @@ mesh = SubResource("BoxMesh_pxiln")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, -6)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, 0)
 mesh = SubResource("SphereMesh_42ymn")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="RigidBody3D"]
 replication_config = SubResource("SceneReplicationConfig_6s04u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1.58209, 0, 0, 0, 1.57871, -0.103336, 0, 0.103336, 1.57871, 1, 1, 0)
+shape = SubResource("SphereShape3D_q2iim")
 
 [connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Join" to="." method="_on_join_pressed"]

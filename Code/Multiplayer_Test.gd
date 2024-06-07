@@ -11,7 +11,7 @@ var idCount = 5
 
 func _on_host_pressed():
   # Creates a server on port (135)
-  peer.create_server(135)
+	peer.create_server(135)
 	host.disabled = true
 	join.disabled = true
 	multiplayer.multiplayer_peer = peer

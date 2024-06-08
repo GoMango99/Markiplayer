@@ -11,10 +11,16 @@ func _ready():
 	# Automatically start the server in headless mode.
 	if DisplayServer.get_name() == "headless":
 		print("Automatically starting dedicated server.")
-		_on_host_pressed.call_deferred()
+		_on_host_button_pressed.call_deferred()
 
 
-func _on_host_pressed():
+func start_game():
+	# Hide the UI and unpause to start the game.
+	$UI.hide()
+	get_tree().paused = false
+
+
+func _on_host_button_pressed():
 	# Start as server.
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(PORT)
@@ -25,8 +31,8 @@ func _on_host_pressed():
 	start_game()
 
 
-func _on_connect_pressed():
-	# Start as client.
+func _on_connect_button_pressed():
+		# Start as client.
 	var txt : String = $UI/Net/Options/Remote.text
 	if txt == "":
 		OS.alert("Need a remote to connect to.")
@@ -39,8 +45,3 @@ func _on_connect_pressed():
 	multiplayer.multiplayer_peer = peer
 	start_game()
 
-
-func start_game():
-	# Hide the UI and unpause to start the game.
-	$UI.hide()
-	get_tree().paused = false

@@ -1,0 +1,28 @@
+* This is a script for controlling shooting 
+
+
+  var angle
+  
+  class gun{
+    range, spread, projs
+  }
+
+  func shoot_proj(){
+    for p = 0 to projs
+    {
+      if(spread == 0){
+        raycast.shoot(forward, distance) 
+      }
+      else{
+        for i = -spread.y/2 to spread.y/2{
+          for j = -spread.x/2 to spread.x/2{
+            raycast.shoot(newdir, distance)
+          }
+        } 
+      }
+    }
+  }
+
+  func update(){
+    shoot_proj()
+  }

@@ -1,0 +1,64 @@
+* Weapons
+** Basic
+*** Double Barrel Shotgun
+It will contain two shots
+It will be incredibly inaccurate
+The shot will have a large spread
+as low damage fall off (As you wont be able to hit much from a distance)
+Will have some average
+*** Plasma Rifle
+- Will have different charge mode:
+  - No Charge:
+    - Will fire a basic shot that will have small knockback to the player
+    - Will have no damage fall off
+    - Accurate
+    - Contains 5 shots that regenerate with damage done (From any weapon)
+    - Uses 1 shot
+  - Mininal Charge:
+    - Will fire a more powerful shot
+    - More knockback
+    - Uses 2 shots
+  - Full charge:
+    - Will fire a really powerful shot
+    - Uses 5 shots
+*** Rifle
+A standard Rifle
+No knockback to the player (Have to have one boring weapon for when knockback is a bad idea)
+** Advanced
+*** Rocket Launcher
+Shoots a fast moving projectile
+Has a lot of damage fall off
+Provides a lot of knockback
+Has 5 rockets in the magazine (Somehow)
+*** Zig Zag Rocket Launcher
+Shoots a regular rocket
+While in the air, you can shoot two more rockets that will hit you and propel you in the opposite direction
+Useful for rapid direction changes
+Creates a large explosion
+*** Land mines 
+Throwable
+Relatively Large knockback
+When stepping on them, they will immidiately explode
+Can throw multiple while in the air and time it so you surf off of them
+Similar to demomans stickies
+*** Adrenaline Rifle
+When you shoot an enemy, you gain +1% speed per damage for 5secs (Max 250%)
+You take no knockback
+For every 100% over the speed limit you go, you will deal 10% more damage and have 10/s more regen
+*** Crusher Launcher
+Shoots out a shockwave directly foreward
+- When the shockwave hits an enemy:
+  - It is hurt
+  - It is launched up into the air
+  - It is hurt again
+  - It is then smashed directly down and hurt again on impact with the floor
+The enemy will explode if they die on collision with the floor
+This will not have any impact on the player
+** Melee
+*** Broadsword
+Large swing radius
+Deals more damage for enemies killed in the last 10 seconds
+Slices enemies
+*** Return Sword
+"Melee"
+Thrown and returns to you like a boomerang

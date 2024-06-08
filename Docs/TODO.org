@@ -1,0 +1,17 @@
+* Todo:
+** Combat:
+  - [ ] Add a raycast weapon system
+  - [ ] Add a weapon inventory manager
+  - [ ] Add projectile weapons
+  - [ ] Add knockback
+** Movement:
+  - [x] Add WASD movment
+  - [x] Add jumping
+  - [ ] Add dashing
+  - [ ] Add wall jumping
+  - [ ] Add door kicks
+  - [ ] Add doors being knocked off
+** Misc
+  - [ ] Make a test level
+  - [ ] ... 
+   

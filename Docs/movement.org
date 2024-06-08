@@ -1,0 +1,19 @@
+* Movement
+** Basics
+  - WASD
+  - Jumping
+  - Gravity
+** More Advanced
+*** Dashing
+  - Requires a weapon | [[weapons.org]]
+  - Dashing is only possible when you have a sword out,
+  - You will dash forewards with your sword out and attack anythng you collide with,
+  - Dashing is on a cooldown,
+  - Dashing is is omnidirectional
+*** Wall Jumping
+  - When colliding with a wall, you can jump away from it
+  - Like mario but if it was 3D
+*** Door Kicks
+    Like in postal 2 (But fast)
+    Can Knock Doors off and hit them into enemies (Kind of unnessesary) 
+

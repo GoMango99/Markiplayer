@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://iyyr2143g0l6"]
+
+[ext_resource type="PackedScene" uid="uid://dkeqpuriww4o3" path="res://Scenes/basic_player.tscn" id="1_b7juc"]
+[ext_resource type="PackedScene" uid="uid://c1o0r1yoiejvl" path="res://Scenes/Weapon.tscn" id="2_jc84b"]
+
+[node name="Game" type="Node3D"]
+
+[node name="basic_player" parent="." instance=ExtResource("1_b7juc")]
+
+[node name="MeshInstance3D2" parent="basic_player" instance=ExtResource("2_jc84b")]

@@ -45,3 +45,4 @@ func _on_connect_button_pressed():
   multiplayer.multiplayer_peer = peer
   start_game()
 
+# Ermm what the sigma does this script do
